@@ -1,0 +1,365 @@
+@layer reset {
+
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+
+    /* https://kilianvalkhof.com/2022/css-html/your-css-reset-needs-text-size-adjust-probably/ */
+    html {
+        -moz-text-size-adjust: none;
+        -webkit-text-size-adjust: none;
+        text-size-adjust: none;
+    }
+
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    p,
+    figure,
+    blockquote,
+    dl,
+    dd {
+        margin: 0;
+    }
+
+    /* https://www.scottohara.me/blog/2019/01/12/lists-and-safari.html */
+    [role="list"] {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        min-block-size: 100vh;
+        line-height: 1.6;
+    }
+
+    h1,
+    h2,
+    h3,
+    button,
+    input,
+    label {
+        line-height: 1.1;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+        text-wrap: balance;
+    }
+
+    p,
+    li {
+        text-wrap: pretty;
+    }
+
+    img,
+    picture {
+        max-inline-size: 100%;
+        display: block;
+    }
+
+    input,
+    button,
+    textarea,
+    select {
+        font: inherit;
+    }
+
+}
+
+@layer base {
+    /* Premitives */
+    :root {
+        /* Mode 1 */
+        /* color */
+        --black: #1a1a1a;
+        --brand-500: #3b44f0;
+        --green-500: #68d585;
+        --grey: #3a3a3a;
+        --red-500: #f64b4b;
+        --white: #fdfdff;
+        /* number */
+        --spacing-number-1: 0.5rem;
+        --spacing-number-2: 1rem;
+        --spacing-number-3: 1.5rem;
+        --spacing-number-4: 2rem;
+        --spacing-number-5: 2.5rem;
+        --spacing-number-6: 3rem;
+        --spacing-number-7: 3.5rem;
+        --spacing-number-8: 4rem;
+        --spacing-number-9: 4.5rem;
+        --spacing-number-10: 5rem;
+        --typography-font-height-cta-mobile: var(--typography-premitives-number-number-2);
+        --typography-font-height-header-4-mobile: var(--typography-premitives-number-number-2);
+        --typography-font-height-cta-web: var(--typography-premitives-number-number-3);
+        --typography-font-height-body-mobile: var(--typography-premitives-number-number-4);
+        --typography-font-height-header-3-mobile: var(--typography-premitives-number-number-4);
+        --typography-font-height-body-web: var(--typography-premitives-number-number-5);
+        --typography-font-height-header-4-web: var(--typography-premitives-number-number-5);
+        --typography-font-height-header-2-mobile: var(--typography-premitives-number-number-6);
+        --typography-font-height-header-1-mobile: var(--typography-premitives-number-number-7);
+        --typography-font-height-header-3-web: var(--typography-premitives-number-number-7);
+        --typography-font-height-header-2-web: var(--typography-premitives-number-number-8);
+        --typography-font-height-header-1-web: var(--typography-premitives-number-number-10);
+        --typography-font-size-header-4-mobile: var(--typography-premitives-number-number-1);
+        --typography-font-size-body-mobile: var(--typography-premitives-number-number-2);
+        --typography-font-size-cta-mobile: var(--typography-premitives-number-number-2);
+        --typography-font-size-body-web: var(--typography-premitives-number-number-3);
+        --typography-font-size-cta-web: var(--typography-premitives-number-number-3);
+        --typography-font-size-header-3-mobile: var(--typography-premitives-number-number-3);
+        --typography-font-size-header-4-web: var(--typography-premitives-number-number-3);
+        --typography-font-size-header-2-mobile: var(--typography-premitives-number-number-5);
+        --typography-font-size-header-1-mobile: var(--typography-premitives-number-number-6);
+        --typography-font-size-header-3-web: var(--typography-premitives-number-number-6);
+        --typography-font-size-header-2-web: var(--typography-premitives-number-number-7);
+        --typography-font-size-header-1-web: var(--typography-premitives-number-number-9);
+        --typography-letter-spacing-header-1-web: -0.14rem;
+        --typography-letter-spacing-header-2-web: -0.1rem;
+        --typography-letter-spacing-header-1-mobile: -0.08rem;
+        --typography-letter-spacing-header-3-web: -0.08rem;
+        --typography-letter-spacing-header-2-mobile: -0.06rem;
+        --typography-letter-spacing-header-3-mobile: -0.04rem;
+        --typography-letter-spacing-header-4-mobile: 0.05rem;
+        --typography-letter-spacing-header-4-web: 0.1rem;
+        --typography-premitives-number-number-1: 0.5rem;
+        --typography-premitives-number-number-2: 0.875rem;
+        --typography-premitives-number-number-3: 1rem;
+        --typography-premitives-number-number-4: 1.25rem;
+        --typography-premitives-number-number-5: 1.5rem;
+        --typography-premitives-number-number-6: 2rem;
+        --typography-premitives-number-number-7: 2.5rem;
+        --typography-premitives-number-number-8: 3rem;
+        --typography-premitives-number-number-9: 3.5rem;
+        --typography-premitives-number-number-10: 4rem;
+        /* string */
+        --typography-font-family-family: "Inter", sans-serif;
+        --typography-font-weight-weight-1: Bold;
+        --typography-font-weight-weight-2: Semi-Bold;
+        --typography-font-weight-weight-3: Medium;
+    }
+    /* typo-tokens */
+    :root {
+        /* Web */
+        /* number */
+        --font-height-cta: var(--typography-font-height-cta-web);
+        --font-height-body: var(--typography-font-height-body-web);
+        --font-height-sub-header: var(--typography-font-height-header-4-web);
+        --font-height-card-title: var(--typography-font-height-header-3-web);
+        --font-height-section-title: var(--typography-font-height-header-2-web);
+        --font-height-title-large: var(--typography-font-height-header-1-web);
+        --font-size-body: var(--typography-font-size-body-web);
+        --font-size-cta: var(--typography-font-size-cta-web);
+        --font-size-sub-header: var(--typography-font-size-header-4-web);
+        --font-size-card-title: var(--typography-font-size-header-3-web);
+        --font-size-section-title: var(--typography-font-size-header-2-web);
+        --font-size-title-large: var(--typography-font-size-header-1-web);
+        --letter-spacing-title-large: var(--typography-letter-spacing-header-1-web);
+        --letter-spacing-section-title: var(--typography-letter-spacing-header-2-web);
+        --letter-spacing-card-title: var(--typography-letter-spacing-header-3-web);
+        --letter-spacing-sub-header: var(--typography-letter-spacing-header-4-web);
+        /* string */
+        --font-family-font-family: var(--typography-font-family-family);
+        --font-weight-body: var(--typography-font-weight-weight-3);
+        --font-weight-card-title: var(--typography-font-weight-weight-1);
+        --font-weight-cta: var(--typography-font-weight-weight-2);
+        --font-weight-section-title: var(--typography-font-weight-weight-1);
+        --font-weight-sub-header: var(--typography-font-weight-weight-2);
+        --font-weight-title-large: var(--typography-font-weight-weight-1);
+        /* Mobile */
+        /* number */
+        --font-height-cta-mobile: var(--typography-font-height-cta-mobile);
+        --font-height-sub-header-mobile: var(--typography-font-height-header-4-mobile);
+        --font-height-body-mobile: var(--typography-font-height-body-mobile);
+        --font-height-card-title-mobile: var(--typography-font-height-header-3-mobile);
+        --font-height-section-title-mobile: var(--typography-font-height-header-2-mobile);
+        --font-height-title-large-mobile: var(--typography-font-height-header-1-mobile);
+        --font-size-sub-header-mobile: var(--typography-font-size-header-4-mobile);
+        --font-size-body-mobile: var(--typography-font-size-body-mobile);
+        --font-size-cta-mobile: var(--typography-font-size-cta-mobile);
+        --font-size-card-title-mobile: var(--typography-font-size-header-3-mobile);
+        --font-size-section-title-mobile: var(--typography-font-size-header-2-mobile);
+        --font-size-title-large-mobile: var(--typography-font-size-header-1-mobile);
+        --letter-spacing-title-large-mobile: var(--typography-letter-spacing-header-1-mobile);
+        --letter-spacing-section-title-mobile: var(--typography-letter-spacing-header-2-mobile);
+        --letter-spacing-card-titl-mobilee: var(--typography-letter-spacing-header-3-mobile);
+        --letter-spacing-sub-header-mobile: var(--typography-letter-spacing-header-4-mobile);
+    }
+}
+
+@layer layout {
+    .wrapper{
+        min-width: 320px;
+        max-width: 1200px;
+        margin-inline: auto;
+        padding: var(--spacing-number-6) var(--spacing-number-2);
+    }
+
+    .hero-content{
+        display: flex;
+        gap: var(--spacing-number-4);
+
+        h1{
+            margin-block-end: clamp(var(--spacing-number-2), 0.8182rem + 0.9091vw, var(--spacing-number-3));
+        }
+
+        h4{
+            margin-block-end: var(--spacing-number-1);
+        }
+
+        p{
+            width: 60%;
+            margin-block-end: clamp(var(--spacing-number-3), 0.9545rem + 2.7273vw, var(--spacing-number-6));
+        }
+
+        @media (max-width: 1024px) {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            h1{
+                margin-block-end: clamp(var(--spacing-number-2), 0.8182rem + 0.9091vw, var(--spacing-number-3));
+                text-align: center;
+            }
+
+            h4{
+                margin-block-end: var(--spacing-number-1);
+                text-align: center;
+            }
+
+            p{
+                margin-block-end: clamp(var(--spacing-number-3), 0.9545rem + 2.7273vw, var(--spacing-number-6));
+                text-align: center;
+                margin-inline: auto;
+            }
+
+            .hero-header button{
+                margin-inline: auto;
+                display: block;
+            }
+        }
+    }
+
+    .services-content{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: clamp(var(--spacing-number-3), 0.9545rem + 2.7273vw, var(--spacing-number-6));
+
+        .services-header{
+            display: flex;
+            max-width: 656px;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .card-container{
+            display: flex;
+            width: 100%;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: clamp(var(--spacing-number-3), 0.9545rem + 2.7273vw, var(--spacing-number-6));
+            align-items: center;
+            align-content: center;
+            row-gap: 24px;
+
+            .card{
+                display: flex;
+                flex: 0 0 300px;
+                padding: var(--spacing-number-4) var(--spacing-number-2);
+                flex-direction: column;
+                align-items: center;
+                gap: 48px;
+                text-align: center;
+                color: var(--white);
+                border-radius: var(--spacing-number-2);
+            }
+
+            @media (max-width: 768px) {
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                .card{
+                    flex: 0 0 100%;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+@layer utilities {
+
+    .title-large {
+        font-family: var(--font-family-font-family),sans-serif;
+        font-weight: var(--font-weight-title-large);
+        font-size: clamp(var(--font-size-title-large-mobile), 1.4545rem + 2.7273vw, var(--font-size-title-large));
+        line-height: clamp(var(--font-height-title-large-mobile), 1.9545rem + 2.7273vw, var(--font-height-title-large));
+        letter-spacing: -0.04em;
+        text-transform: capitalize;
+    }
+
+    .section-title {
+        font-family: var(--font-family-font-family),sans-serif;
+        font-weight: var(--font-weight-section-title);
+        font-size: clamp(var(--font-size-section-title-mobile), 1.1364rem + 1.8182vw, var(--font-size-section-title));
+        line-height: clamp(var(--font-height-section-title-mobile), 1.6364rem + 1.8182vw, var(--font-height-section-title));
+        letter-spacing: -0.04em;
+        text-transform: capitalize;
+    }
+
+    .card-title {
+        font-family: var(--font-family-font-family),sans-serif;
+        font-weight: var(--font-weight-card-title);
+        font-size: clamp(var(--font-size-card-title-mobile), 0.3628rem + 3.5398vw, var(--font-size-card-title));
+        line-height: clamp(var(--font-height-card-title-mobile), 0.8628rem + 3.5398vw, var(--font-height-card-title));
+        letter-spacing: -0.04em;
+        text-transform: capitalize;
+    }
+
+    .sub-header {
+        font-family: var(--font-family-font-family),sans-serif;
+        font-weight: var(--font-weight-sub-header);
+        font-size: clamp(var(--font-size-sub-header-mobile), 0.3182rem + 0.9091vw, var(--font-size-sub-header));
+        line-height: clamp(var(--font-height-sub-header-mobile), 0.6477rem + 1.1364vw, var(--font-height-sub-header));
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--red-500);
+    }
+
+    .body-copy {
+        font-family: var(--font-family-font-family),sans-serif;
+        font-weight: var(--font-weight-body);
+        font-size: clamp(var(--font-size-body-mobile), 0.8295rem + 0.2273vw, var(--font-size-body));
+        line-height: clamp(var(--font-height-body-mobile), 1.1591rem + 0.4545vw, var(--font-height-body));
+    }
+
+    .cta{
+        font-family: var(--font-family-font-family),sans-serif;
+        font-weight: var(--font-weight-body);
+        font-size: clamp(var(--font-size-cta-mobile), 0.8295rem + 0.2273vw, var(--font-size-cta));
+        line-height: clamp(var(--font-height-cta-mobile), 0.8295rem + 0.2273vw, var(--font-height-cta));
+    }
+
+    .green{
+        background-color: var(--green-500);
+    }
+    .brand{
+        background-color: var(--brand-500);
+    }
+    .red{
+        background-color: var(--red-500);
+    }
+
+
+}

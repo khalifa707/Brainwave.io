@@ -193,6 +193,20 @@
     }
 }
 
+@layer components {
+    .card{
+        display: flex;
+        flex: 0 0 300px;
+        padding: var(--spacing-number-4) var(--spacing-number-2);
+        flex-direction: column;
+        align-items: center;
+        gap: 48px;
+        text-align: center;
+        color: var(--white);
+        border-radius: var(--spacing-number-2);
+    }
+}
+
 @layer layout {
     .wrapper{
         min-width: 320px;
@@ -267,18 +281,6 @@
             align-items: center;
             align-content: center;
             row-gap: 24px;
-
-            .card{
-                display: flex;
-                flex: 0 0 300px;
-                padding: var(--spacing-number-4) var(--spacing-number-2);
-                flex-direction: column;
-                align-items: center;
-                gap: 48px;
-                text-align: center;
-                color: var(--white);
-                border-radius: var(--spacing-number-2);
-            }
 
             @media (max-width: 768px) {
                 flex-direction: column;
@@ -366,7 +368,36 @@
         }
     }
 
-}
+    .fact-container{
+        display: flex;
+        justify-content: space-between;
+        gap: var(--spacing-number-3);
+        align-items: center;
+        align-content: center;
+        flex-wrap: wrap;
+
+        .fact-wrapper{
+            display: flex;
+            flex: 1 1 300px; /* Equal flex growth, min-width of 300px */
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: var(--spacing-number-1);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            .fact-wrapper{
+                flex: 1 1 100%;
+                width: 100%;
+                max-width: 100%;
+            }
+        }
+    }
 
 @layer utilities {
 
@@ -431,6 +462,5 @@
     .red{
         background-color: var(--red-500);
     }
-
 
 }

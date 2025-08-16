@@ -609,6 +609,83 @@
             }
         }
     }
+    .works-content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-number-3);
+        width: 100%;
+
+        .works-container {
+            display: flex;
+            flex-direction: column;
+
+            img {
+                width: 100%;
+                height: 300px;
+                object-fit: cover;
+                display: block;
+                border-radius: var(--spacing-number-2);
+            }
+
+            h4 {
+                padding: var(--spacing-number-2) 0 var(--spacing-number-1);
+                margin: 0;
+                text-transform: uppercase;
+                font-size: clamp(var(--font-size-sub-header-mobile), 0.3182rem + 0.9091vw, var(--font-size-sub-header));
+                font-weight: var(--font-weight-sub-header);
+                color: var(--grey);
+                letter-spacing: 0.1em;
+            }
+
+            h3 {
+                padding: 0;
+                margin: 0;
+                font-size: clamp(var(--font-size-card-title-mobile), 0.3628rem + 3.5398vw, var(--font-size-card-title));
+                font-weight: var(--font-weight-card-title);
+                color: var(--black);
+                line-height: 1.3;
+                text-transform: capitalize;
+            }
+        }
+
+        /* Create masonry effect with different heights */
+        .works-container:nth-child(1) {
+            img {
+                height: 350px;
+            }
+        }
+
+        .works-container:nth-child(2) {
+            img {
+                height: 280px;
+            }
+        }
+
+        .works-container:nth-child(3) {
+            img {
+                height: 320px;
+            }
+        }
+
+        .works-container:nth-child(4) {
+            img {
+                height: 300px;
+            }
+        }
+
+        /* Responsive breakpoints */
+        @media (max-width: 768px) {
+            grid-template-columns: 1fr;
+            gap: var(--spacing-number-2);
+
+            .works-container {
+                img {
+                    height: 300px !important;
+                }
+            }
+        }
+    }
+
 }
 
 @layer utilities {
